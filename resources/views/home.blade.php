@@ -194,7 +194,7 @@
                 </div>
     
                 <!-- Portfolio Grid -->
-                <div class="flex flex-wrap gap-4 justify-center items-center ">
+                <div class="flex flex-wrap gap-4 justify-center items-center "  data-aos="fade-up" data-aos-duration="1000">
                     @foreach ($portfolios as $portfolio)
                         <div class="relative group ">
                             <!-- Gambar Portfolio dengan overlay -->
@@ -243,30 +243,30 @@
                 </div>
 
                 <div class="w-full">
-                    <form action="proses.php" method="post" class="grid  ml-[27rem]">
+                    <form action="{{ route('contact.store') }}" method="post" class="grid  ml-[27rem]">
+                        @csrf
                         <div class="flex">
                             <div class="w-56 px-2 mb-4" data-aos="fade-up" data-aos-anchor-placement="center-bottom"
                                 data-aos-duration="500">
-                                <input type="text" name="name" id="name" placeholder="Your Name"
-                                    class="w-full bg-blue-300 text-slate-900 p-2 rounded-2xl focus:outline-none focus:ring-blue-500 focus:ring-1 focus:border-blue-500">
+                                <input type="text" name="name" id="name" placeholder="Your Name" required                                    class="w-full bg-blue-300 text-slate-900 p-2 rounded-2xl focus:outline-none focus:ring-blue-500 focus:ring-1 focus:border-blue-500">
                             </div>
 
                             <div class="w-56 px-2 mb-4" data-aos="fade-up" data-aos-anchor-placement="center-bottom"
                                 data-aos-duration="1000">
-                                <input type="text" name="email" id="email" placeholder="Your Email"
+                                <input type="email" name="email" id="email" placeholder="Your Email" required
                                     class="w-full bg-blue-300 text-slate-900 p-2 rounded-2xl focus:outline-none focus:ring-blue-500 focus:ring-1 focus:border-blue-500">
                             </div>
                         </div>
 
                         <div class="w-[28rem] px-2 mb-4" data-aos="fade-up" data-aos-anchor-placement="center-bottom"
                             data-aos-duration="1500">
-                            <input type="text" name="subject" id="subject" placeholder="Subject"
+                            <input type="text" name="subject" id="subject" placeholder="Subject" required
                                 class="w-full bg-blue-300 text-slate-900 p-2 rounded-2xl focus:outline-none focus:ring-blue-500 focus:ring-1 focus:border-blue-500">
                         </div>
 
                         <div class="w-[28rem] px-2 mb-4"data-aos="fade-up" data-aos-anchor-placement="center-bottom"
                             data-aos-duration="2000">
-                            <textarea name="message" id="message" placeholder="Message"
+                            <textarea name="message" id="message" placeholder="Message" required
                                 class="w-full bg-blue-300 text-slate-900 p-2 rounded-2xl focus:outline-none focus:ring-blue-500 focus:ring-1 focus:border-blue-500 h-24"></textarea>
                         </div>
 
@@ -276,6 +276,11 @@
                                 class="text-sm font-semibold text-slate-900 bg-blue-300 py-2 px-6 rounded-full w-full hover:opacity-90 hover:bg-blue-600 hover:shadow-lg transition duration-500">Send</button>
                         </div>
                     </form>
+                    @if(session('success'))
+                        <div class="text-green-500 mt-4">
+                            {{ session('success') }}
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>

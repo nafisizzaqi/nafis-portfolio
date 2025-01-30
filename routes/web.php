@@ -26,6 +26,8 @@ Route::resource('experience', App\Http\Controllers\Resources\ExperienceControlle
 Route::resource('portfolio', App\Http\Controllers\Resources\PortfolioController::class);
 Route::resource('contact', App\Http\Controllers\Resources\ContactController::class);
 
+Route::post('/contact/store', [App\Http\Controllers\Resources\ContactController::class, 'store'])->name('contact.store');
+
 Route::post('/hero/store-or-update', [HeroController::class, 'storeOrUpdate'])->name('hero.store_or_update');
 
 
