@@ -1,0 +1,32 @@
+.navbar a {
+    text-decoration: none;
+    color: #333;
+    font-size: 15px;
+    position: relative;
+    padding: 5px 0;
+}
+
+/* Animasi garis di bawah saat hover */
+.navbar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: #3498db;
+    transition: width 0.3s ease;
+}
+
+/* Ketika di-hover, garis akan muncul */
+.navbar a:hover::after {
+    width: 100%;
+}
+
+form input::placeholder {
+    color:black;
+}
+
+form textarea::placeholder {
+    color:black;
+}
