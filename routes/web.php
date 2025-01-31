@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Resources\HeroController;
 use App\Http\Controllers\Accounts\ProfileController;
+use App\Http\Controllers\Resources\ArticleController;
 
 
 Route::get('/', function () {
@@ -30,6 +31,7 @@ Route::post('/contact/store', [App\Http\Controllers\Resources\ContactController:
 
 Route::post('/hero/store-or-update', [HeroController::class, 'storeOrUpdate'])->name('hero.store_or_update');
 
+Route::get('articles', [App\Http\Controllers\Resources\ArticleController::class, 'index']);
 
 Route::middleware('auth')->group(function () {
 

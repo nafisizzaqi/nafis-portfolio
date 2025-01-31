@@ -17,11 +17,10 @@ class DatabaseSeeder extends Seeder
             ConfigTableSeeder::class,
             PermissionTableSeeder::class,
             UserTableSeeder::class,
+            ContactSeeder::class,
+            ArticleSeeder::class,
         ]);
 
-        $this->call([
-            ContactSeeder::class,
-            PermissionTableSeeder::class, // Seeder lain jika ada
-        ]);
+        
     }
 }
