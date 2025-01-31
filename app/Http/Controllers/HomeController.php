@@ -32,7 +32,7 @@ class HomeController extends Controller
         $skills = Skill::all();
         $experiences = Experience::all();
         $portfolios = Portfolio::all();
-        $articles = Article::all();
+        $articles = Article::latest()->take(4)->get();
         // dd($hero);
         return view('home', compact('hero', 'skills', 'experiences', 'portfolios', 'articles'));
     }

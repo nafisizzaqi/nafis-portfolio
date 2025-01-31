@@ -29,7 +29,7 @@
                         <li><a href="#skills" class="mx-4 hover:text-blue-700 font-bold">Skills</a></li>
                         <li><a href="#exp" class="mx-4 hover:text-blue-700 font-bold">Experiences</a></li>
                         <li><a href="#portfolio" class="mx-4 hover:text-blue-700 font-bold">Portfolios</a></li>
-                        <li><a href="#article" class="mx-4 hover:text-blue-700 font-bold">Articles</a></li>
+                        <li><a href="{{ route('articles') }}" target ="_blank" class="mx-4 hover:text-blue-700 font-bold">Articles</a></li>
                         <li><a href="#contact" class="mx-4 hover:text-blue-700 font-bold">Contact Me</a></li>
                     </ul>
                 </div>
@@ -49,6 +49,7 @@
 
     <!-- Hero Section -->
     <section id="home" class="pt-32 pb-32 bg-[#CDEBF0]">
+        <div>{{ $hero }}</div>
         <div class="container">
             <div class="flex flex-wrap items-center">
                 <div class="w-full lg:w-1/2 ml-28">
