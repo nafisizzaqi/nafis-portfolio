@@ -10,6 +10,14 @@
       </div>
     </div>
 
+    <div class="col-md-4 col-xl-4 col-xxl-3" style="padding-bottom: 20px;">
+      <div class="card bgi-no-repeat h-xl-100" style="height: 200px!important;background-color: #CBE9F1; background-position: 0 calc(100% + 1rem); background-size: 120% auto; background-image:url('image/portofolio-2.png')">
+        <div class="card-body">
+          <a href="{{ route('home') }}" class="btn btn-danger gw-bold px-6 py-3" target ="_blank" > Go To Home </a>
+        </div>
+      </div>
+    </div>
+
     <div class="col-md-9 col-xl-9 col-xxl-9" style="padding-bottom: 20px;">
     <!--begin::Engage widget 4-->
     <a href="https://ninedragonlabs.com" class="card bgi-no-repeat h-xl-100" style="height: 200px!important;background-color: #1B283F; background-position: calc(100% + 1rem) bottom; background-size: 50% auto; background-image:url('assets/media/misc/bg-1.png')">

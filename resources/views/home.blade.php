@@ -14,8 +14,6 @@
 <body class="bg-[#F2FCFF]">
 
     <!-- Navbar -->
-
-
     <section>
         <nav
             class="bg-[#CDEBF0] dark:bg-gray-900 fixed w-full h-20 z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
@@ -45,13 +43,10 @@
             </div>
         </nav>
     </section>
-
-
-
     <!-- End Navbar -->
 
-    <!-- Hero Section -->
 
+    <!-- Hero Section -->
     <section id="home" class="pt-32 pb-32 bg-[#CDEBF0]">
         <div class="container">
             <div class="flex flex-wrap items-center">
@@ -83,8 +78,8 @@
     </section>
     <!-- End Hero Section -->
 
-    <!-- Skils Section -->
 
+    <!-- Skils Section -->
     <section id="skills" class="pt-28 pb-28 bg-white">
         <div class="container mx-auto text-center">
             <div class="flex flex-col items-center">
@@ -119,11 +114,10 @@
             </div>
         </div>
     </section>
-
     <!-- end skils  -->
 
-    <!-- Experience -->
 
+    <!-- Experience -->
     <section id="exp" class="pt-28 pb-28 ">
         <div class="container mx-auto text-center">
             <div class="flex flex-col items-center">
@@ -182,8 +176,8 @@
     </section>
     <!-- end Experience -->
 
-    <!-- porttfolio -->
 
+    <!-- porttfolio -->
     <section id="portfolio" class="pt-28 pb-28">
         <div class="container mx-auto text-center">
             <div class="flex flex-col items-center">
@@ -209,7 +203,7 @@
                 
                         <!-- Modal Portfolio -->
                         <div id="modal{{ $portfolio->id }}" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden z-20">
-                            <div class="bg-white rounded-lg p-6 max-w-3xl relative">
+                            <div class="bg-white rounded-lg p-6 max-w-xl relative">
                                 <!-- Gambar Portfolio di Modal -->
                                 <div class="flex justify-center">
                                     <img src="{{ asset('media/images/' . $portfolio->image) }}" alt="{{ $portfolio->title }}" class="w-full h-auto rounded-lg">
@@ -230,8 +224,8 @@
     </section>
     <!-- end portfolio  -->
 
-    <!-- contact  -->
 
+    <!-- contact  -->
     <section id="contact" class="pt-28 pb-28">
         <div class="container mx-auto text-center">
             <div class="flex flex-col items-center">
@@ -248,26 +242,26 @@
                         <div class="flex">
                             <div class="w-56 px-2 mb-4" data-aos="fade-up" data-aos-anchor-placement="center-bottom"
                                 data-aos-duration="500">
-                                <input type="text" name="name" id="name" placeholder="Your Name" required                                    class="w-full bg-blue-300 text-slate-900 p-2 rounded-2xl focus:outline-none focus:ring-blue-500 focus:ring-1 focus:border-blue-500">
+                                <input type="text" name="name" id="name" placeholder="Your Name" required                                    class="w-full bg-blue-300 text-black p-2 rounded-2xl focus:outline-none focus:ring-blue-500 focus:ring-1 focus:border-blue-500 focus:bg-blue-400" autocomplete="off">
                             </div>
 
                             <div class="w-56 px-2 mb-4" data-aos="fade-up" data-aos-anchor-placement="center-bottom"
                                 data-aos-duration="1000">
                                 <input type="email" name="email" id="email" placeholder="Your Email" required
-                                    class="w-full bg-blue-300 text-slate-900 p-2 rounded-2xl focus:outline-none focus:ring-blue-500 focus:ring-1 focus:border-blue-500">
+                                    class="w-full bg-blue-300 text-slate-900 p-2 rounded-2xl focus:outline-none focus:ring-blue-500 focus:ring-1 focus:border-blue-500 focus:bg-blue-400" autocomplete="off">
                             </div>
                         </div>
 
                         <div class="w-[28rem] px-2 mb-4" data-aos="fade-up" data-aos-anchor-placement="center-bottom"
                             data-aos-duration="1500">
                             <input type="text" name="subject" id="subject" placeholder="Subject" required
-                                class="w-full bg-blue-300 text-slate-900 p-2 rounded-2xl focus:outline-none focus:ring-blue-500 focus:ring-1 focus:border-blue-500">
+                                class="w-full bg-blue-300 text-slate-900 p-2 rounded-2xl focus:outline-none focus:ring-blue-500 focus:ring-1 focus:border-blue-700 focus:bg-blue-400" autocomplete="off">
                         </div>
 
                         <div class="w-[28rem] px-2 mb-4"data-aos="fade-up" data-aos-anchor-placement="center-bottom"
                             data-aos-duration="2000">
                             <textarea name="message" id="message" placeholder="Message" required
-                                class="w-full bg-blue-300 text-slate-900 p-2 rounded-2xl focus:outline-none focus:ring-blue-500 focus:ring-1 focus:border-blue-500 h-24"></textarea>
+                                class="w-full bg-blue-300 text-slate-900 p-2 rounded-2xl focus:outline-none focus:ring-blue-500 focus:ring-1 focus:border-blue-500 h-24 focus:bg-blue-400" autocomplete="off"></textarea>
                         </div>
 
                         <div class="w-[28rem] px-2"data-aos="fade-up" data-aos-anchor-placement="center-bottom"
@@ -277,7 +271,7 @@
                         </div>
                     </form>
                     @if(session('success'))
-                        <div class="text-green-500 mt-4">
+                        <div class="text-green-500 mt-4 text-center ml-6" data-aos = "fade-up" data-aos-duration="3000">
                             {{ session('success') }}
                         </div>
                     @endif
@@ -285,11 +279,10 @@
             </div>
         </div>
     </section>
-
     <!-- end contact -->
 
-    <!-- footer  -->
 
+    <!-- footer  -->
     <footer id="footer" class="bg-[#CDEBF0] pb-5">
         <div class="container">
             <div class="w-full pt-10">
@@ -350,21 +343,16 @@
             </div>
         </div>
     </footer>
-
     <!-- endfooter -->
 
 
-    <!-- Script for Typing Effect -->
 
+    <!-- Script for Typing Effect -->
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="{{ asset('assets/js/script.js') }}"></script>
-
-
     <script>
         AOS.init();
     </script>
-
 </body>
-
 </html>

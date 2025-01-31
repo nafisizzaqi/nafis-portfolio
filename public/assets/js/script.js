@@ -24,35 +24,35 @@ document.getElementById('Hire-me').addEventListener('click', function() {
     });
 });
 
-const openModalBtns = document.querySelectorAll('.openModal');
-const closeModalBtns = document.querySelectorAll('.closeModal');
+document.addEventListener("DOMContentLoaded", function () {
+    const openModals = document.querySelectorAll(".openModal");
+    const closeModals = document.querySelectorAll(".closeModal");
+    
+    openModals.forEach(openModal => {
+        openModal.addEventListener("click", function () {
+            const modalId = this.getAttribute("data-modal");
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove("hidden");
+                setTimeout(() => {
+                    modal.querySelector(".modalImage").classList.add("scale-100");
+                }, 100); 
+            }
+        });
+    });
 
-openModalBtns.forEach(button => {
-    button.addEventListener('click', () => {
-        const modalId = button.getAttribute('data-modal');
-        const modal = document.getElementById(modalId);
-        if (modal) {
-            modal.classList.remove('hidden');
-        }
+    closeModals.forEach(closeModal => {
+        closeModal.addEventListener("click", function () {
+            const modal = this.closest(".fixed");
+            if (modal) {
+                modal.querySelector(".modalImage").classList.remove("scale-100");
+                setTimeout(() => {
+                    modal.classList.add("hidden");
+                }, 300);
+            }
+        });
     });
 });
 
-// Menangani event klik pada tombol tutup modal
-closeModalBtns.forEach(button => {
-    button.addEventListener('click', () => {
-        const modal = button.closest('.fixed');
-        modal.classList.add('hidden');
-    });
-});
-
-// Menutup modal jika klik di luar area modal
-window.addEventListener('click', (event) => {
-    const openModals = document.querySelectorAll('.fixed:not(.hidden)');
-    openModals.forEach(modal => {
-        if (event.target === modal) {
-            modal.classList.add('hidden');
-        }
-    });
-});
 
 

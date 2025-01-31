@@ -9,13 +9,13 @@ use App\Models\Config;
 
 class ConfigController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('permission:config-view', ['only' => ['index']]);
-        $this->middleware('permission:config-create', ['only' => ['create', 'store']]);
-        $this->middleware('permission:config-edit', ['only' => ['edit', 'update']]);
-        $this->middleware('permission:config-delete', ['only' => ['destroy']]);
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('permission:config-view', ['only' => ['index']]);
+    //     $this->middleware('permission:config-create', ['only' => ['create', 'store']]);
+    //     $this->middleware('permission:config-edit', ['only' => ['edit', 'update']]);
+    //     $this->middleware('permission:config-delete', ['only' => ['destroy']]);
+    // }
     /**
      * Display a listing of the resource.
      */
