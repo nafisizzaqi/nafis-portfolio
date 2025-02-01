@@ -64,6 +64,17 @@
             @endcan
 
                 <div class="menu-item">
+                    <a class="menu-link {{ request()->is(['adminarticle', 'adminarticle/*']) ? 'active ' : '' }}"
+                        href="{{ route('adminarticle.index') }}">
+                        <span class="menu-icon">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </span>
+                        <span class="menu-title">{{ __('Article') }}</span>
+                    </a>
+                </div>
+
+
+                <div class="menu-item">
                     <a class="menu-link {{ request()->is(['contact', 'contact/*']) ? 'active ' : '' }}"
                         href="{{ route('contact.index') }}">
                         <span class="menu-icon">

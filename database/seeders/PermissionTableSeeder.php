@@ -63,6 +63,12 @@ class PermissionTableSeeder extends Seeder
             ['id' => 35, 'name' => 'portfolio-show'],
             ['id' => 36, 'name' => 'portfolio-delete'],
 
+            ['id' => 37, 'name' => 'adminarticle-view'],
+            ['id' => 38, 'name' => 'adminarticle-create'],
+            ['id' => 39, 'name' => 'adminarticle-edit'],
+            ['id' => 40, 'name' => 'adminarticle-show'],
+            ['id' => 41, 'name' => 'adminarticle-delete'],
+
 
             
         ];
