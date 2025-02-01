@@ -40,7 +40,7 @@
                     </div>
 
                     <div class="mb-7">
-                        <label class="fw-semibold fs-6 mb-2">Image</label>
+                        <label class="fw-semibold fs-6 mb-2">Avatar</label>
                         <input type="file" name="image" id="image"
                             class="form-control form-control-solid mb-3 mb-lg-0 {{ $errors->get("image") ? "is-invalid border border-1 border-danger" : "" }}"
                             value="{{ old('image') }}" />
@@ -57,11 +57,12 @@
 
                     <div class="mb-7">
                         <label class="required fw-semibold fs-6 mb-2">Content</label>
-                        <input type="text" name="content" id="content"
-                            class="form-control form-control-solid mb-3 mb-lg-0 {{ $errors->get("content") ? "is-invalid border border-1 border-danger" : "" }}" placeholder="Full content"
-                            value="{{ old('content') }}" />
+                        <textarea name="content" id="content"
+                            class="form-control form-control-solid mb-3 mb-lg-0 {{ $errors->get('content') ? 'is-invalid border border-1 border-danger' : '' }}" 
+                            placeholder="Full content" rows="5">{{ old('content') }}</textarea>
                         <x-input-error class="mt-2" :messages="$errors->get('content')" />
                     </div>
+                    
 
                     
                 <div class="card-footer d-flex justify-content-end py-6 px-9">

@@ -71,7 +71,7 @@
                         <p class="text-base text-gray-700 text-end mr-8 mt-4">{{ $article->created_at->diffForHumans() }}</p>
                         <!-- Gambar artikel -->
                         @if ($article->image)
-                            <img src="{{ url('storage/articles/' . $article->image) }}" class="card-img-circle"
+                            <img src="{{ url('media/images/' . $article->image) }}" class="card-img-circle"
                                 alt="Article Image">
                         @endif
                         <div class="px-6 py-4">
@@ -83,7 +83,7 @@
                             <!-- Tombol yang lebih kecil -->
                             <div class="flex justify-between items-center " data-aos="zoom-in">
                                 <div class="flex items-center space-x-4">
-                                    <img class="w-7 h-7 rounded-full" src="{{ url('storage/articles/' . $article->image) }}"
+                                    <img class="w-7 h-7 rounded-full" src="{{ url('media/images/' . $article->image) }}"
                                         alt="Article Image" />
                                     <span class="font-medium text-3xl dark:text-white text-sm">
                                         {{ $article->author }}

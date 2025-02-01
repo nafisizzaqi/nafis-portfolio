@@ -67,7 +67,7 @@
                             <tr class="text-start text-muted fw-bold fs-7 text-uppercase gs-0">
 
                                 <th class="min-w-125px">Title</th>
-                                <th class="min-w-125px text-start">Image</th>
+                                <th class="min-w-125px text-start">Avatar--</th>
                                 <th class="min-w-125px">Author</th>
                                 <th class="min-w-125px">Content</th>
                                 <th class="min-w-125px">created at</th>
@@ -92,9 +92,9 @@
                                         <!--begin:: Avatar -->
                                         @if ($article->image)
                                             <div class="image__  me-3"
-                                                style="width: 50px; height: 50px; overflow: hidden">
-                                                <a href="{{ asset('media/images/' . $article->image) }}" target="_blank">
-                                                    <img src="{{ asset('media/images/' . $article->image) }}"
+                                                style="width: 40px; height: 40px; overflow: hidden">
+                                                <a href="{{ asset('media/images/' . $article->image) }}" target="_blank" >
+                                                    <img src="{{ asset('media/images/' . $article->image) }}" class="rounded-full"
                                                         alt="skill Profile"
                                                         style="width: 100%; height:100%; object-fit: cover;">
                                                 </a>

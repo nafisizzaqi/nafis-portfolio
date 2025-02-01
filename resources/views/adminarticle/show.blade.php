@@ -41,22 +41,22 @@
                                 <!--begin::Name-->
                                 <div class="mb-7">
                                     <label class="required fw-semibold fs-6 mb-2">{{ __("Title") }}</label>
-                                    <div class="text-dark fw-bold">{{ $skill->title }}</div>
+                                    <div class="text-dark fw-bold">{{ $article->title }}</div>
                                 </div>
                                 <!--end::Name-->
                             </div>
                             <div class="col-lg-6 mb-5">
                                 <!--begin::Name-->
-                                    <label class="d-block fw-semibold fs-6 mb-5">Image</label>
+                                    <label class="d-block fw-semibold fs-6 mb-5">Avatar</label>
                                     <div class="image-input image-input-outline image-input-placeholder" data-kt-image-input="false">
-                                        <div class="image-input-wrapper w-125px h-125px">
-                                            @if ($skill->image)
-                                                <img src="{{ asset('media/images/' . $skill->image) }}" width="120px" height="120px" alt="Avatar" />
+                                        <div class="image-input-wrapper w-60px h-70px">
+                                            @if ($article->image)
+                                                <img src="{{ asset('media/images/' . $article->image) }}" width="60px" height="70px" alt="Avatar" />
                                             @else
                                                 <!-- Tampilkan placeholder avatar jika tidak ada avatar -->
-{{--                                                <img src="https://ui-avatars.com/api/?name={{ $skill->name }}" width="100px" height="120px" alt="Placeholder Avatar" />--}}
+{{--                                                <img src="https://ui-avatars.com/api/?name={{ $article->name }}" width="100px" height="120px" alt="Placeholder Avatar" />--}}
                                                 <div class="symbol-label fs-3 bg-light-danger text-danger w-100 h-100 d-flex justify-content-center align-items-center">
-                                                    <span>{{ substr($skill->title, 0, 1) }}</span>
+                                                    <span>{{ substr($article->title, 0, 1) }}</span>
                                                 </div>
                                             @endif
                                         </div>
@@ -78,7 +78,7 @@
                                 <!--begin::Name-->
                                 <div class="mb-7">
                                     <label class="required fw-semibold fs-6 mb-2">{{ __("Author") }}</label>
-                                    <div class="text-dark fw-bold">{{ $adminarticle->name }}</div>
+                                    <div class="text-dark fw-bold">{{ $article->author }}</div>
                                 </div>
                                 <!--end::Name-->
                             </div>
@@ -86,7 +86,7 @@
                                 <!--begin::Name-->
                                 <div class="mb-7">
                                     <label class="required fw-semibold fs-6 mb-2">{{ __("Content") }}</label>
-                                    <div class="text-dark fw-bold">{{ $adminarticle->content }}</div>
+                                    <div class="text-dark fw-bold">{{ $article->content }}</div>
                                 </div>
                                 <!--end::Name-->
                             </div>

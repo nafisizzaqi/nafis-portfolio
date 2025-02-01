@@ -67,7 +67,7 @@
                     <a class="menu-link {{ request()->is(['adminarticle', 'adminarticle/*']) ? 'active ' : '' }}"
                         href="{{ route('adminarticle.index') }}">
                         <span class="menu-icon">
-                            <i class="fa-solid fa-briefcase"></i>
+                            <i class="fas fa-newspaper"></i>
                         </span>
                         <span class="menu-title">{{ __('Article') }}</span>
                     </a>

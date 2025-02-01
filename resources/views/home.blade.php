@@ -29,7 +29,8 @@
                         <li><a href="#skills" class="mx-4 hover:text-blue-700 font-bold">Skills</a></li>
                         <li><a href="#exp" class="mx-4 hover:text-blue-700 font-bold">Experiences</a></li>
                         <li><a href="#portfolio" class="mx-4 hover:text-blue-700 font-bold">Portfolios</a></li>
-                        <li><a href="{{ route('articles.index') }}"  class="mx-4 hover:text-blue-700 font-bold">Articles</a></li>
+                        <li><a href="{{ route('articles.index') }}"
+                                class="mx-4 hover:text-blue-700 font-bold">Articles</a></li>
                         <li><a href="#contact" class="mx-4 hover:text-blue-700 font-bold">Contact Me</a></li>
                     </ul>
                 </div>
@@ -186,84 +187,114 @@
                 <div class="w-full lg:w-1/2">
                     <h3 class="text-9xl uppercase text-white" style="-webkit-text-stroke: 1px black; opacity: 0.2;"
                         data-aos="zoom-in-down" data-aos-duration="1500">PORTFOLIO</h3>
-                    <h3 class="font-semibold text-5xl relative bottom-20" data-aos="fade-down" data-aos-duration="1500">Portfolio</h3>
+                    <h3 class="font-semibold text-5xl relative bottom-20" data-aos="fade-down"
+                        data-aos-duration="1500">Portfolio</h3>
                 </div>
-    
+
                 <!-- Portfolio Grid -->
-                <div class="flex flex-wrap gap-4 justify-center items-center "  data-aos="fade-up" data-aos-duration="1000">
+                <div class="flex flex-wrap gap-4 justify-center items-center " data-aos="fade-up"
+                    data-aos-duration="1000">
                     @foreach ($portfolios as $portfolio)
                         <div class="relative group ">
                             <!-- Gambar Portfolio dengan overlay -->
-                            <img src="{{ asset('media/images/' . $portfolio->image) }}" alt="{{ $portfolio->title }}"
-                                class="cursor-pointer rounded-lg object-cover h-64 openModal" data-modal="modal{{ $portfolio->id }}">
-                
+                            <img src="{{ asset('media/images/' . $portfolio->image) }}"
+                                alt="{{ $portfolio->title }}"
+                                class="cursor-pointer rounded-lg object-cover h-64 openModal"
+                                data-modal="modal{{ $portfolio->id }}">
+
                             <!-- Overlay Text di Gambar -->
-                            <span class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white text-xl font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                            <span
+                                class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white text-xl font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                                 {{ $portfolio->title }}
                             </span>
                         </div>
-                
+
                         <!-- Modal Portfolio -->
-                        <div id="modal{{ $portfolio->id }}" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden z-20">
+                        <div id="modal{{ $portfolio->id }}"
+                            class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden z-20">
                             <div class="bg-white rounded-lg p-6 max-w-xl relative">
                                 <!-- Gambar Portfolio di Modal -->
                                 <div class="flex justify-center">
-                                    <img src="{{ asset('media/images/' . $portfolio->image) }}" alt="{{ $portfolio->title }}" class="w-full h-auto rounded-lg">
+                                    <img src="{{ asset('media/images/' . $portfolio->image) }}"
+                                        alt="{{ $portfolio->title }}" class="w-full h-auto rounded-lg">
                                 </div>
                                 <h3 class="text-2xl font-semibold mt-4 text-center">{{ $portfolio->title }}</h3>
                                 <p class="text-center text-gray-700 mt-4">{{ $portfolio->description }}</p>
                                 <p class="text-center mt-2"><time datetime="">{{ $portfolio->date }}</time></p>
-                                <button class="absolute top-2 right-2 text-white bg-red-500 rounded-full p-2 hover:bg-red-700 closeModal">
+                                <button
+                                    class="absolute top-2 right-2 text-white bg-red-500 rounded-full p-2 hover:bg-red-700 closeModal">
                                     ×
                                 </button>
                             </div>
                         </div>
                     @endforeach
                 </div>
-                
+
             </div>
         </div>
     </section>
     <!-- end portfolio  -->
 
-    
+
     {{-- start article --}}
     <section id="article" class="pt-28 pb-28">
         <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6 flex flex-col items-center text-center">
             <div class="w-full lg:w-1/2">
                 <h3 class="text-9xl uppercase text-white" style="-webkit-text-stroke: 1px black; opacity: 0.2;"
                     data-aos="zoom-in-down" data-aos-duration="1500">ARTICLES</h3>
-                <h3 class="font-semibold text-5xl relative bottom-20" data-aos="fade-down" data-aos-duration="1500">Our Articles</h3>
+                <h3 class="font-semibold text-5xl relative bottom-20" data-aos="fade-down" data-aos-duration="1500">
+                    Our Articles</h3>
             </div>
             <div class="grid gap-8 lg:grid-cols-4">
 
                 @foreach ($articles as $article)
-                <article class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700" data-aos="fade-up" data-aos-duration="1000">
-                    <p class="text-sm text-gray-700 text-end mb-2">{{ $article->created_at->diffForHumans() }}</p>
-                    <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white hover:underline" data-aos="zoom-in" ><a href="{{ route('articles.show', $article->slug) }}">{{ $article->title }}</a></h2>
-                    <p class="mb-5  text-gray-500 dark:text-gray-400" data-aos="zoom-in">{{ Str::limit($article->content, 150) }}</p>
-                    <div class="flex justify-between items-center" data-aos="zoom-in" >
-                        <div class="flex items-center space-x-4">
-                            <img class="w-7 h-7 rounded-full" src="{{ url('storage/articles/' . $article->image) }}" alt="Article Image" />
+                    <article
+                        class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
+                        data-aos="fade-up" data-aos-duration="1000">
+                        <p class="text-sm text-gray-700 text-end mb-2">{{ $article->created_at->diffForHumans() }}</p>
+                        <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white hover:underline"
+                            data-aos="zoom-in"><a
+                                href="{{ route('articles.show', $article->slug) }}">{{ $article->title }}</a></h2>
+                        <p class="mb-5  text-gray-500 dark:text-gray-400" data-aos="zoom-in">
+                            {{ Str::limit($article->content, 150) }}</p>
+                        <div class="flex justify-between items-center" data-aos="zoom-in">
+                            <div class="flex items-center space-x-4">
 
-                            <span class="font-medium dark:text-white text-sm">
-                                {{ $article->author }}
-                            </span>
-                        </div>
-                        <a href="{{ route('articles.show', $article->slug) }}" class="bg-blue-600  inline-flex items-center text-sm font-medium text-white rounded-full px-2 py-2 hover:bg-blue-700">
-                            Read more
-                            <svg class="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                        </a>
-                    </div>
-                </article>
-                @endforeach
-                
-
+                                @if ($article->image)
+                                    <div class="image__ " style="width: 30px; height: 30px; overflow: hidden">
+                                        <a href="{{ asset('media/images/' . $article->image) }}" target="_blank">
+                                            <img src="{{ asset('media/images/' . $article->image) }}" class="rounded-full" alt="skill Profile"
+                                                style="width: 100%; height:100%; object-fit: cover;">
+                                        </a>
+                                    </div>
+                                    
+                                @endif
                                 
-            </div>  
+
+                                <span class="font-medium dark:text-white text-sm">
+                                    {{ Str::limit( $article->author, 12 ) }}
+                                </span>
+                            </div>
+                            <a href="{{ route('articles.show', $article->slug) }}"
+                                class="bg-blue-600  inline-flex items-center text-sm font-medium text-white rounded-full px-2 py-2 hover:bg-blue-700">
+                                Read more
+                                <svg class="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+                @endforeach
+
+
+
+            </div>
         </div>
-      </section>
-      {{-- end article --}}
+    </section>
+    {{-- end article --}}
 
     <!-- contact  -->
     <section id="contact" class="pt-28 pb-28">
@@ -282,26 +313,32 @@
                         <div class="flex">
                             <div class="w-56 px-2 mb-4" data-aos="fade-up" data-aos-anchor-placement="center-bottom"
                                 data-aos-duration="500">
-                                <input type="text" name="name" id="name" placeholder="Your Name" required                                    class="w-full bg-blue-300 text-black p-2 rounded-2xl focus:outline-none focus:ring-blue-500 focus:ring-1 focus:border-blue-500 focus:bg-blue-400" autocomplete="off">
+                                <input type="text" name="name" id="name" placeholder="Your Name" required
+                                    class="w-full bg-blue-300 text-black p-2 rounded-2xl focus:outline-none focus:ring-blue-500 focus:ring-1 focus:border-blue-500 focus:bg-blue-400"
+                                    autocomplete="off">
                             </div>
 
                             <div class="w-56 px-2 mb-4" data-aos="fade-up" data-aos-anchor-placement="center-bottom"
                                 data-aos-duration="1000">
-                                <input type="email" name="email" id="email" placeholder="Your Email" required
-                                    class="w-full bg-blue-300 text-slate-900 p-2 rounded-2xl focus:outline-none focus:ring-blue-500 focus:ring-1 focus:border-blue-500 focus:bg-blue-400" autocomplete="off">
+                                <input type="email" name="email" id="email" placeholder="Your Email"
+                                    required
+                                    class="w-full bg-blue-300 text-slate-900 p-2 rounded-2xl focus:outline-none focus:ring-blue-500 focus:ring-1 focus:border-blue-500 focus:bg-blue-400"
+                                    autocomplete="off">
                             </div>
                         </div>
 
                         <div class="w-[28rem] px-2 mb-4" data-aos="fade-up" data-aos-anchor-placement="center-bottom"
                             data-aos-duration="1500">
                             <input type="text" name="subject" id="subject" placeholder="Subject" required
-                                class="w-full bg-blue-300 text-slate-900 p-2 rounded-2xl focus:outline-none focus:ring-blue-500 focus:ring-1 focus:border-blue-700 focus:bg-blue-400" autocomplete="off">
+                                class="w-full bg-blue-300 text-slate-900 p-2 rounded-2xl focus:outline-none focus:ring-blue-500 focus:ring-1 focus:border-blue-700 focus:bg-blue-400"
+                                autocomplete="off">
                         </div>
 
                         <div class="w-[28rem] px-2 mb-4"data-aos="fade-up" data-aos-anchor-placement="center-bottom"
                             data-aos-duration="2000">
                             <textarea name="message" id="message" placeholder="Message" required
-                                class="w-full bg-blue-300 text-slate-900 p-2 rounded-2xl focus:outline-none focus:ring-blue-500 focus:ring-1 focus:border-blue-500 h-24 focus:bg-blue-400" autocomplete="off"></textarea>
+                                class="w-full bg-blue-300 text-slate-900 p-2 rounded-2xl focus:outline-none focus:ring-blue-500 focus:ring-1 focus:border-blue-500 h-24 focus:bg-blue-400"
+                                autocomplete="off"></textarea>
                         </div>
 
                         <div class="w-[28rem] px-2"data-aos="fade-up" data-aos-anchor-placement="center-bottom"
@@ -310,8 +347,9 @@
                                 class="text-sm font-semibold text-slate-900 bg-blue-300 py-2 px-6 rounded-full w-full hover:opacity-90 hover:bg-blue-600 hover:shadow-lg transition duration-500">Send</button>
                         </div>
                     </form>
-                    @if(session('success'))
-                        <div class="text-green-500 mt-4 text-center ml-6" data-aos = "fade-up" data-aos-duration="3000">
+                    @if (session('success'))
+                        <div class="text-green-500 mt-4 text-center ml-6" data-aos = "fade-up"
+                            data-aos-duration="3000">
                             {{ session('success') }}
                         </div>
                     @endif
@@ -395,4 +433,5 @@
         AOS.init();
     </script>
 </body>
+
 </html>

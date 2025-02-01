@@ -28,7 +28,7 @@
         <div id="kt_app_content_container" class="app-container container-fluid" style="padding-left: 0px!important; padding-right: 0px!important">
             <!--begin::Card-->
             <div class="card">
-                <form id="kt_modal_add_skill_form" class="form" action="{{ route('adminarticle.update', $skill->id) }}"
+                <form id="kt_modal_add_skill_form" class="form" action="{{ route('adminarticle.update', $article->id) }}"
                     method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
@@ -37,15 +37,15 @@
                             <label class="required fw-semibold fs-6 mb-2">Title</label>
                             <input type="text" name="title" id="title"
                                 class="form-control form-control-solid mb-3 mb-lg-0 {{ $errors->get("title") ? "is-invalid border border-1 border-danger" : "" }}" placeholder="Full title"
-                                value="{{ $skill->title }}" />
+                                value="{{ $article->title }}" />
                             <x-input-error class="mt-2" :messages="$errors->get('title')" />
                         </div>
 
                         <div class="mb-7">
-                            <label class="fw-semibold fs-6 mb-2">Image</label>
-                            @if ($skill->image)
+                            <label class="fw-semibold fs-6 mb-2">Avatar</label>
+                            @if ($article->image)
                                 <div class="image__  me-3 mb-2" style="width: 50px; height: 50px; overflow: hidden">
-                                    <img src="{{ asset('media/images/' . $skill->image) }}" alt="User Avatar"
+                                    <img src="{{ asset('media/images/' . $article->image) }}" class="rounded-full" alt="User Avatar"
                                         style="width: 100%; height: 100%; object-fit: cover;">
                                 </div>
                             @endif
@@ -59,7 +59,7 @@
                             <label class="required fw-semibold fs-6 mb-2">Author</label>
                             <input type="text" name="author" id="author"
                                 class="form-control form-control-solid mb-3 mb-lg-0 {{ $errors->get("author") ? "is-invalid border border-1 border-danger" : "" }}" placeholder="Full Author"
-                                value="{{ $skill->author }}" />
+                                value="{{ $article->author }}" />
                             <x-input-error class="mt-2" :messages="$errors->get('author')" />
                         </div>
 
@@ -67,12 +67,12 @@
                             <label class="required fw-semibold fs-6 mb-2">Content</label>
                             <input type="text" name="content" id="content"
                                 class="form-control form-control-solid mb-3 mb-lg-0 {{ $errors->get("content") ? "is-invalid border border-1 border-danger" : "" }}" placeholder="Full Content"
-                                value="{{ $skill->content }}" />
+                                value="{{ $article->content }}" />
                             <x-input-error class="mt-2" :messages="$errors->get('content')" />
                         </div>
                         
                     <div class="card-footer d-flex justify-content-end py-6 px-9">
-                        <a href="{{ route('skill.index') }}">
+                        <a href="{{ route('adminarticle.index') }}">
                             <button type="button" class="btn btn-light me-3">Cancel</button>
                         </a>
                         <!-- <button type="submit" class="btn btn-primary me-3" name="update_and_continue_editing" value="1">

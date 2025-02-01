@@ -9,13 +9,13 @@ class Article extends Model
 {
     protected $fillable = ['title', 'author', 'slug', 'content', 'image'];
 
-    // public static function boot()
-    // {
-    //     parent::boot();
-    //     static::creating(function ($article) {
-    //         $article->slug = Str::slug($article->title);
-    //     });
-    // }
+    public static function boot()
+    {
+        parent::boot();
+        static::creating(function ($article) {
+            $article->slug = Str::slug($article->title);
+        });
+    }
 
     public function getRouteKeyName()
     {

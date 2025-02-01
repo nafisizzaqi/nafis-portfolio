@@ -34,10 +34,10 @@ class ArticleController extends Controller
         return view('adminarticle.index', compact('articles'));
     }
 
-    // public function showSkill() {
-    //     $skills = Skill::all();
-    //     return view('home', compact('skills'));
-    // }
+    public function showArticle() {
+        $articles = Article::all();
+        return view('home', compact('articles'));
+    }
 
     public function show($id)
     {
@@ -90,7 +90,7 @@ class ArticleController extends Controller
         ]);
 
         return redirect()
-            ->route('article.index')
+            ->route('adminarticle.index')
             ->with('message', [
                 'status' => $article ? 'success' : 'failed',
                 'message' => $article ? 'Data created successfully' : 'Data failed to create!',
@@ -121,8 +121,7 @@ class ArticleController extends Controller
             'content' => 'required|string|min:10',
 
         ]);
-
-        $slug = Str::slug($request->title, '-'); 
+ 
 
         if ($request->hasFile('image')) {
             if ($article->image) {
@@ -141,7 +140,7 @@ class ArticleController extends Controller
         $article->save();
 
         return redirect()
-            ->route('article.index')
+            ->route('adminarticle.index')
             ->with('message', [
                 'status' => 'success',
                 'message' => 'Data updated successfully',
