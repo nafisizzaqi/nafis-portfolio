@@ -14,7 +14,13 @@ class ArticleController extends Controller
     public function index()
     {
         $articles = Article::latest()->get();
-        return view('article', compact('articles'));
+        return view('articles.index', compact('articles'));
+    }
+
+    public function show(Article $article)
+    {
+        // Artikel sudah otomatis diambil berdasarkan slug melalui route model binding
+        return view('articles.show', compact('article'));
     }
 
 }

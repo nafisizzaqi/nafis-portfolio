@@ -15,7 +15,8 @@ Route::get('/', function () {
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 // Halaman Semua Artikel
-Route::get('/articles', [ArticleController::class, 'index'])->name('articles');
+Route::get('/articles', [ArticleController::class, 'index'])->name('articles.index');
+Route::get('/articles/{article:slug}', [ArticleController::class, 'show'])->name('articles.show');
 
 // Dashboard
 Route::get('/dashboard', function () {
